@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class DecimalParaBinario {
+
+    public static void converter(int n) {
+        if (n == 0) {
+            return;
+        }
+
+        converter(n / 2); // chamada recursiva
+
+        System.out.print(n % 2); // imprime o resto
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        if (n == 0) {
+            System.out.print(0);
+        } else {
+            converter(n);
+        }
+
+        sc.close();
+    }
+}
