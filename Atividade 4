@@ -1,0 +1,27 @@
+public class MaiorElemento {
+
+    public static int maior(int[] v, int n) {
+        // caso base
+        if (n == 1) {
+            return v[0];
+        }
+
+        // maior dos primeiros n-1 elementos
+        int maiorAnterior = maior(v, n - 1);
+
+        // compara com o último elemento
+        if (v[n - 1] > maiorAnterior) {
+            return v[n - 1];
+        } else {
+            return maiorAnterior;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] vetor = {3, 8, 2, 10, 5};
+
+        int resultado = maior(vetor, vetor.length);
+
+        System.out.println("Maior elemento: " + resultado);
+    }
+}
