@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class SequenciaInversa {
+
+    public static void imprimirInverso(int n, Scanner sc) {
+        if (n == 0) {
+            return;
+        }
+
+        int num = sc.nextInt(); // lê o número
+
+        imprimirInverso(n - 1, sc); // chamada recursiva
+
+        System.out.print(num + " "); // imprime depois (inverte)
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt(); // quantidade de números
+
+        imprimirInverso(n, sc);
+
+        sc.close();
+    }
+}
